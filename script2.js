@@ -120,7 +120,7 @@ function deleteWIsh(id){
         })
     }else{
         heartBtn.forEach((node) => {
-            node.style.color = 'pink';
+            node.style.color = 'rgb(27, 26, 26, .4)';
         })
         numWish.forEach((node) => {
             node.textContent = wishId.length;

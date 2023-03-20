@@ -192,7 +192,7 @@ function addMessage(){
             const li = document.createElement("li");
             li.classList.add("itemz");
             li.innerHTML = `
-                <span class="name">${item.name}</span> <span class="price">$${item.price}</span>
+                <span class="name">${item.name}</span> <span class="price">$${item.price} x  ${item.amount}</span>
             `
             listArr.appendChild(li)
         })
