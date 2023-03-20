@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cart-Shop</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="AJIDE SHAMSIDEEN">
+    <meta name="description" content="a signle shopping page">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://use.fontawesome.com/7e50d7d663.js"></script>
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <div class="logo"><i class="fa fa-amazon" aria-hidden="true"></i></div>
+
+            <div class="navigations">
+                <ul class="nav-list">
+                    <li class="links"><a href="/index.html">Home</a></li>
+                    <li class="links">Shop</li>
+                    <li class="links">About Us</li>
+                    <li class="links">Blog</li>
+                    <li class="links">Pages</li>
+                    <li class="links">Contact</li>
+                </ul>
+
+                <div class="userExp">
+                    <a href="/message.html">
+                        <span class="messageIcon">
+                            <span class="msgNum">0</span><i class="fa fa-commenting" aria-hidden="true"></i>
+                        </span>
+                    </a>
+                    <a href="/wish.html">
+                        <span class="wishList">
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                            <div class="numWish">0</div>
+                        </span>
+                    </a>
+                    <span class="userLogo"><i class="fa fa-user" aria-hidden="true"></i></span>
+                    <span class="cartLogo">
+                        <div class="logoBtn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+                        <div class="cartItem">0</div>
+                    </span>
+                </div>
+            </div>
+
+            <div class="hamburger">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+
+            <div class="forHam">
+                <ul class="nav-list">
+                    <li class="links"><a href="/index.html">Home</a></li>
+                    <li class="links">Shop</li>
+                    <li class="links">About Us</li>
+                    <li class="links">Blog</li>
+                    <li class="links">Pages</li>
+                    <li class="links">Contact</li>
+                </ul>
+            </div>
+
+
+            <!-- cart cont -->
+            <div class="cartCont">
+
+                <div class="cartHead">Your Cart</div>
+    
+                <div class="cartDom">
+    
+                    <!-- <div class="eachCart">
+    
+                        <div class="eachImg">
+                            <img src="/imgs/banner.jpg" alt="" class="pro_img">
+                        </div>
+    
+                        <div class="eachDetails">
+                            <div class="name">PS4</div>
+                            <div class="price">$300</div>
+                        </div>
+    
+                        <div class="cartFunc">
+                            <span class="addMore"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+                            <span class="currAMount">1</span>
+                            <span class="subMore"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+                        </div>
+    
+                    </div>
+    
+                    <div class="eachCart">
+    
+                        <div class="eachImg">
+                            <img src="/imgs/banner.jpg" alt="" class="pro_img">
+                        </div>
+    
+                        <div class="eachDetails">
+                            <div class="name">PS4</div>
+                            <div class="price">$300</div>
+                        </div>
+    
+                        <div class="cartFunc">
+                            <span class="addMore"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+                            <span class="currAMount">1</span>
+                            <span class="subMore"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+                        </div>
+    
+                    </div>
+    
+                    <div class="eachCart">
+    
+                        <div class="eachImg">
+                            <img src="/imgs/banner.jpg" alt="" class="pro_img">
+                        </div>
+    
+                        <div class="eachDetails">
+                            <div class="name">PS4</div>
+                            <div class="price">$300</div>
+                        </div>
+    
+                        <div class="cartFunc">
+                            <span class="addMore"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+                            <span class="currAMount">1</span>
+                            <span class="subMore"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+                        </div>
+    
+                    </div>
+    
+                    <div class="eachCart">
+    
+                        <div class="eachImg">
+                            <img src="/imgs/banner.jpg" alt="" class="pro_img">
+                        </div>
+    
+                        <div class="eachDetails">
+                            <div class="name">PS4</div>
+                            <div class="price">$300</div>
+                        </div>
+    
+                        <div class="cartFunc">
+                            <span class="addMore"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+                            <span class="currAMount">1</span>
+                            <span class="subMore"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+                        </div>
+    
+                    </div>
+    
+                    <div class="eachCart">
+    
+                        <div class="eachImg">
+                            <img src="/imgs/banner.jpg" alt="" class="pro_img">
+                        </div>
+    
+                        <div class="eachDetails">
+                            <div class="name">PS4</div>
+                            <div class="price">$300</div>
+                        </div>
+    
+                        <div class="cartFunc">
+                            <span class="addMore"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+                            <span class="currAMount">1</span>
+                            <span class="subMore"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+                        </div>
+    
+                    </div> -->
+    
+                    
+    
+                </div>
+    
+                <div class="cart-options">
+    
+                    <div class="cartTotal">
+                        <span class="wordSpan">Your Total:</span>
+                        <span class="total">$0</span>
+                    </div>
+    
+                    <div class="cartBtnOpt">
+                        <button class="clearCart">Clear</button>
+                        <button class="buyItems">CheckOut</button>
+                    </div>
+    
+                </div>
+    
+            </div>
+
+        </nav>
+        
+    </header>
+
+    <div class="bottomNav">
+        <a href="/message.html">
+            <span class="messageIcon">
+                <span class="msgNum">0</span><i class="fa fa-commenting" aria-hidden="true"></i>
+            </span>
+        </a>
+        <a href="/wish.html">
+            <span class="wishList">
+                <i class="fa fa-heart" aria-hidden="true"></i>
+                <div class="numWish">0</div>
+            </span>
+        </a>
+        <span class="userLogo"><i class="fa fa-user" aria-hidden="true"></i></span>
+        <span class="cartLogo">
+            <div class="logoBtn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+            <div class="cartItem">0</div>
+        </span>
+    </div>
+
+    <main>
+
+        <div class="banner">
+            <img src="/imgs/banner.jpg" alt="" class="bannerImg">
+        </div>
+
+        <div class="productSection">
+            <div class="head">Top Products</div>
+
+            <div class="productDom">
+
+                <div class="eachProduct">
+                    <div class="pro_img">
+                        <img src="/imgs/banner.jpg" alt="">
+                    </div>
+                    <div class="pro_details">
+                        <div class="pro-name">Banner</div>
+                        <div class="pro-price">$300</div>
+                    </div>
+                    <div class="pro_func">
+                        <button class="wishAdd"><i class="fa fa-heart-o" aria-hidden="true"></i></button>
+                        <button class="buyBtn"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+
+                <div class="eachProduct">
+                    <div class="pro_img">
+                        <img src="/imgs/banner.jpg" alt="">
+                    </div>
+                    <div class="pro_details">
+                        <div class="pro-name">Banner</div>
+                        <div class="pro-price">$300</div>
+                    </div>
+                    <div class="pro_func">
+                        <button class="wishAdd"><i class="fa fa-heart-o" aria-hidden="true"></i></button>
+                        <button class="buyBtn"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+
+                <div class="eachProduct">
+                    <div class="pro_img">
+                        <img src="/imgs/banner.jpg" alt="">
+                    </div>
+                    <div class="pro_details">
+                        <div class="pro-name">Banner</div>
+                        <div class="pro-price">$300</div>
+                    </div>
+                    <div class="pro_func">
+                        <button class="wishAdd"><i class="fa fa-heart-o" aria-hidden="true"></i></button>
+                        <button class="buyBtn"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+
+                <div class="eachProduct">
+                    <div class="pro_img">
+                        <img src="/imgs/banner.jpg" alt="">
+                    </div>
+                    <div class="pro_details">
+                        <div class="pro-name">Banner</div>
+                        <div class="pro-price">$300</div>
+                    </div>
+                    <div class="pro_func">
+                        <button class="wishAdd"><i class="fa fa-heart-o" aria-hidden="true"></i></button>
+                        <button class="buyBtn"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <div class="successBuy">
+        <div class="removeMsg"><i class="fa fa-times-circle-o" aria-hidden="true"></i></div>
+        <span class="successMsg">
+            You order has been successfully placed
+        </span>
+        <div class="successIcon">
+            <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+        </div>
+    </div>
+    
+
+    <script src="/script.js"></script>
+</body>
+</html>

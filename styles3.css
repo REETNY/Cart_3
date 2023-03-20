@@ -1,0 +1,113 @@
+body{
+    background: pink;
+}
+
+.MsgCont{
+    width: 90%;
+    background: pink;
+    min-height: 100vh;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 90px 40px 40px 40px;
+}
+
+.MsgHead{
+    font-size: 30px;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+}
+
+.MsgBody{
+    margin-top: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+}
+
+.eachMessage{
+    width: 90%;
+    background: whitesmoke;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.eachHead{
+    font-size: 16px;
+    font-weight: 700;
+    padding: 20px 10px;
+}
+
+.dropDown{
+    width: 100%;
+    height: auto;
+    height: 0;
+    overflow: hidden;
+    transition: height 1s linear;
+}
+
+.openMsg{
+    border-top: 1px solid black;
+    height: auto;
+    overflow: auto;
+}
+
+.list{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.itemz{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.remove{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    display: none;
+    color: rgb(250, 46, 46);
+    font-size: 19px;
+}
+
+.remove:hover{
+    color: rgb(127, 68, 185);
+    font-size: 22px;
+}
+
+.eachMessage:hover .remove{
+    display: block;
+}
+
+
+@media only screen and (max-width: 890px){
+    .MsgCont{
+        width: 100%;
+        padding: 80px 5px 60px 5px;
+    }
+
+    .MsgBody{
+        width: 99%;
+    }
+
+    .eachMessage{
+        width: 99%;
+    }
+}
