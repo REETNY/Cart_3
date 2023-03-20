@@ -48,9 +48,22 @@ body{
 .dropDown{
     width: 100%;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 0;
     overflow: hidden;
     transition: height 1s linear;
+}
+
+span.totalSpent{
+    width: 80%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 20px;
+    font-weight: 900;
 }
 
 .openMsg{
@@ -76,6 +89,10 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.itemz:first-child{
+    margin-top: 15px;
 }
 
 .remove{
@@ -115,6 +132,7 @@ body{
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
     }
 
     .list{
@@ -125,5 +143,9 @@ body{
     .itemz{
         margin-right: 0;
         font-size: 16px;
+    }
+
+    span.totalSpent{
+        width: 95%;
     }
 }

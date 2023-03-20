@@ -171,6 +171,15 @@ function messageAdder(num){
     })
 }
 
+function returnTotal(item){
+    let init = 0;
+    item.map((item) => {
+        init += (item.price * item.amount);
+    })
+    let result = parseFloat(init.toFixed(2));
+    return(result)
+}
+
 function addMessage(){
     MsgBodyEl.innerHTML = '';
     boughtItems.forEach((data, index) => {
@@ -183,9 +192,12 @@ function addMessage(){
                 <ul class="list">
                     
                 </ul>
+                <span class="totalSpent"><span class="totalWord">Your Total:</span> <span class="totalAmount">$${returnTotal(data)}</span></span>
             </div>
         `
         MsgBodyEl.appendChild(div);
+
+        const totalEl = div.querySelector(".totalAmount");
 
         const listArr = div.querySelector(".list");
         data.forEach((item) => {
