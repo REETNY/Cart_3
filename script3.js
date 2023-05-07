@@ -197,10 +197,8 @@ function returnTotal(item){
     return(result)
 }
 
-function addMessage(){
+function addMessage(boughtItems){
     MsgBodyEl.innerHTML = '';
-
-    boughtItems = JSON.parse(localStorage.getItem("boughtItems")) || [];
 
     boughtItems.forEach((data, index) => {
         const div = document.createElement("div");
@@ -281,13 +279,13 @@ function addMessage(){
 
         const removeBtn = div.querySelector(".remove");
         removeBtn.addEventListener("click", () => {
-            
+
             boughtItems = boughtItems.filter((item) => {
                 return item !== data;
             })
             localStorage.setItem("boughtItems", JSON.stringify(boughtItems));
             boughtItems = JSON.parse(localStorage.getItem("boughtItems")) || [];
-            addMessage();
+            addMessage(boughtItems);
             messageAdder(boughtItems)
         })
     })
