@@ -197,10 +197,9 @@ function returnTotal(item){
     return(result)
 }
 
-function addMessage(boughtItems){
+function addMessage(datas){
     MsgBodyEl.innerHTML = '';
-
-    boughtItems.forEach((data, index) => {
+    datas.forEach((data, index) => {
         const div = document.createElement("div");
         let lastItem = data[data.length - 1];
         if(lastItem.isRead){
@@ -219,9 +218,10 @@ function addMessage(boughtItems){
             </div>
         `
         MsgBodyEl.appendChild(div);
+
+        let id = index;
         
         div.addEventListener("click", () => {
-            let id = div.id;
             let totalMsg = JSON.parse(localStorage.getItem("boughtItems")) || [];
             let msg = totalMsg[id];
             if(msg === undefined)return;
@@ -235,7 +235,6 @@ function addMessage(boughtItems){
             
             totalMsg[id] = msg;
             localStorage.setItem("boughtItems", JSON.stringify(totalMsg));
-            // boughtItems = JSON.parse(localStorage.getItem("boughtItems")) || [];
             messageAdder(totalMsg)
             div.style.background = `orange`;
             //boughtItems:Array
@@ -278,15 +277,15 @@ function addMessage(boughtItems){
         })
 
         const removeBtn = div.querySelector(".remove");
-        removeBtn.addEventListener("click", () => {
 
-            boughtItems = boughtItems.filter((item) => {
-                return item !== data;
-            })
-            localStorage.setItem("boughtItems", JSON.stringify(boughtItems));
+        removeBtn.addEventListener("click", () => {
+            console.log(id)
+            let totalItems = JSON.parse(localStorage.getItem("boughtItems")) || [];
+            totalItems.splice(id, 1);
+            localStorage.setItem("boughtItems", JSON.stringify(totalItems));
             boughtItems = JSON.parse(localStorage.getItem("boughtItems")) || [];
             addMessage(boughtItems);
-            messageAdder(boughtItems)
+            messageAdder(totalItems);
         })
     })
 }
