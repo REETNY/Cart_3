@@ -199,6 +199,9 @@ function returnTotal(item){
 
 function addMessage(){
     MsgBodyEl.innerHTML = '';
+
+    boughtItems = JSON.parse(localStorage.getItem("boughtItems")) || [];
+
     boughtItems.forEach((data, index) => {
         const div = document.createElement("div");
         let lastItem = data[data.length - 1];
@@ -223,6 +226,7 @@ function addMessage(){
             let id = div.id;
             let totalMsg = JSON.parse(localStorage.getItem("boughtItems")) || [];
             let msg = totalMsg[id];
+            if(msg === undefined)return;
             msg = msg.map((item) => {
                 if(Object.keys(item).includes("isRead")){
                     return {isRead: true}
@@ -233,6 +237,7 @@ function addMessage(){
             
             totalMsg[id] = msg;
             localStorage.setItem("boughtItems", JSON.stringify(totalMsg));
+            // boughtItems = JSON.parse(localStorage.getItem("boughtItems")) || [];
             messageAdder(totalMsg)
             div.style.background = `orange`;
             //boughtItems:Array
@@ -276,6 +281,7 @@ function addMessage(){
 
         const removeBtn = div.querySelector(".remove");
         removeBtn.addEventListener("click", () => {
+            
             boughtItems = boughtItems.filter((item) => {
                 return item !== data;
             })
