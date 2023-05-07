@@ -299,9 +299,13 @@ class UI{
                 return
             }
 
-            boughtItems = [inCart, ...boughtItems];
+            let boughtUtensils = [...inCart, {isRead: false}];
+
+            // console.log(boughtUtensils)
+
+            boughtItems = [boughtUtensils, ...boughtItems];
             Storage.saveMessage(boughtItems);
-            this.messageAdder(boughtItems.length);
+            this.messageAdder(boughtItems);
 
             inCart = inCart.filter((item) => {
                 return ;
@@ -361,7 +365,7 @@ class UI{
 
         this.populateCart(inCart);
         this.setCartValues(inCart);
-        this.messageAdder(boughtItems.length);
+        this.messageAdder(boughtItems);
     }
 
     closeCart(){
@@ -370,9 +374,21 @@ class UI{
         htmlScroll.style.overflow = 'auto';
     }
 
-    messageAdder(num){
+    messageAdder(data){
+        let msgCount = 0
+        let msg = data.map((obj) => {
+            obj.map((data) => {
+                if(data.isRead === false){
+                    msgCount++
+                }else{
+                    return
+                }
+            })
+        })
+        console.log(msgCount)
+
         msgNumEl.forEach((node) => {
-            node.textContent = num;
+            node.textContent = msgCount;
         })
     }
 

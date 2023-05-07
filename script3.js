@@ -165,15 +165,32 @@ function  removeItem(id){
     populateCart(inCart);
 }
 
-function messageAdder(num){
+function messageAdder(data){
+    let msgCount = 0
+    let msg = data.map((obj) => {
+        obj.map((data) => {
+            if(data.isRead === false){
+                msgCount++
+            }else{
+                return
+            }
+        })
+    })
+
+
     msgNumEl.forEach((node) => {
-        node.textContent = num;
+        node.textContent = msgCount;
     })
 }
 
 function returnTotal(item){
     let init = 0;
-    item.map((item) => {
+    let myData = item.filter((data) => {
+        return Object.keys(data).includes("isRead") ? false : data
+    })
+
+    myData.map((item) => {
+        if(Object.keys(item) === "isRead")return;
         init += (item.price * item.amount);
     })
     let result = parseFloat(init.toFixed(2));
@@ -184,7 +201,12 @@ function addMessage(){
     MsgBodyEl.innerHTML = '';
     boughtItems.forEach((data, index) => {
         const div = document.createElement("div");
+        let lastItem = data[data.length - 1];
+        if(lastItem.isRead){
+            div.style.background = `orange`
+        }
         div.classList.add("eachMessage");
+        div.id = `${index}`
         div.innerHTML = `
             <span class="remove"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
             <div class="eachHead">You have successfully bought the following items:</div>
@@ -196,11 +218,31 @@ function addMessage(){
             </div>
         `
         MsgBodyEl.appendChild(div);
+        
+        div.addEventListener("click", () => {
+            let id = div.id;
+            let totalMsg = JSON.parse(localStorage.getItem("boughtItems")) || [];
+            let msg = totalMsg[id];
+            msg = msg.map((item) => {
+                if(Object.keys(item).includes("isRead")){
+                    return {isRead: true}
+                }else{
+                    return item
+                }
+            })
+            
+            totalMsg[id] = msg;
+            localStorage.setItem("boughtItems", JSON.stringify(totalMsg));
+            messageAdder(totalMsg)
+            div.style.background = `orange`;
+            //boughtItems:Array
+        })
 
         const totalEl = div.querySelector(".totalAmount");
 
         const listArr = div.querySelector(".list");
         data.forEach((item) => {
+            if(Object.keys(item).includes("isRead"))return;
             const li = document.createElement("li");
             li.classList.add("itemz");
             li.innerHTML = `
@@ -240,7 +282,7 @@ function addMessage(){
             localStorage.setItem("boughtItems", JSON.stringify(boughtItems));
             boughtItems = JSON.parse(localStorage.getItem("boughtItems")) || [];
             addMessage();
-            messageAdder(boughtItems.length)
+            messageAdder(boughtItems)
         })
     })
 }
@@ -270,7 +312,7 @@ window.onload = () => {
     setCartValues(inCart)
 
     boughtItems = JSON.parse(localStorage.getItem("boughtItems")) || [];
-    messageAdder(boughtItems.length);
+    messageAdder(boughtItems);
     addMessage(boughtItems);
 };
 

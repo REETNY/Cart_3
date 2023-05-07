@@ -253,9 +253,22 @@ window.onload = () => {
     setCartValues(inCart);
 
     messages = JSON.parse(localStorage.getItem("boughtItems")) || [];
-    msgNumEl.forEach((node) => {
-        node.textContent = getMsg(messages.length)
-    })
+
+    let msgCount = 0
+        let msg = messages.map((obj) => {
+            obj.map((data) => {
+                if(data.isRead === false){
+                    msgCount++
+                }else{
+                    return
+                }
+            })
+        })
+        console.log(msgCount)
+
+        msgNumEl.forEach((node) => {
+            node.textContent = msgCount;
+        })
 
 };
 
